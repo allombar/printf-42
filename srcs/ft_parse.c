@@ -6,7 +6,7 @@
 /*   By: alelomba <alelomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:49:29 by alelomba          #+#    #+#             */
-/*   Updated: 2023/04/19 18:28:14 by alelomba         ###   ########.fr       */
+/*   Updated: 2023/04/20 19:24:30 by alelomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,21 @@
 
 int ft_parse(const char *str, va_list args)
 {
-    int char_count;
-    int i;
+    int char_count = 0;
+    int i = 0;
 
-    char_count = 0;
-    i = 0;
     while (str[i])
     {
-        if (str[i] != '%')
+        if (str[i] == '%')
         {
-            ft_putchar_fd(str[i], 1);
-            char_count++;
+            i++;
+            if (ft_identifier(str[i]))
+                char_count += ft_print_vars(str[i], &args);
+            else if (str[i])
+                char_count += ft_putchar_count(str[i]);
         }
-        else if (str[i] == '%')
-        {
-            if (ft_identifier(str[i + 1]))
-            {
-                //ft_putstr_fd(va_arg(args, char *), 1);
-                ft_print_vars(str[i + 1], args);
-                i++;
-            }
-            else
-                ft_putchar_fd(str[i], 1);
-        }
+        else
+            char_count += ft_putchar_count(str[i]);
         i++;
     }
     return (char_count);

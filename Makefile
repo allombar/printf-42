@@ -2,11 +2,15 @@ LIBFT = ./libft/libft.a
 
 NAME = libftprintf.a
 
-SRCS =      srcs/ft_printf.c 		\
-			srcs/ft_utils.c	 		\
-			srcs/ft_parse.c			\
-			srcs/ft_print_vars.c	\
-			srcs/ft_print_str.c		
+SRCS =      srcs/ft_printf.c 			\
+			srcs/ft_utils.c	 			\
+			srcs/ft_parse.c				\
+			srcs/ft_print_vars.c		\
+			srcs/ft_print_str.c			\
+			srcs/ft_print_hex.c			\
+			srcs/ft_print_int.c			\
+			srcs/ft_print_pointer.c		\
+			srcs/ft_print_ulong.c
 		
 CC = gcc
 

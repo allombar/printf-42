@@ -6,13 +6,18 @@
 /*   By: alelomba <alelomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:55:50 by alelomba          #+#    #+#             */
-/*   Updated: 2023/04/19 17:20:47 by alelomba         ###   ########.fr       */
+/*   Updated: 2023/04/21 20:46:44 by alelomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+#include <stdio.h>
 
 int main(void)
 {
-	ft_printf("%s         %s\n\n\n", NULL, "😄 Ceci est un test");
+	int *i;
+	int test = 100;
+	unsigned long long longu = 1000000000000000000;
+	printf("\nft_printf %i\n", ft_printf("%x %X %p %u %c %s %%", test, test, &test, longu, 'a', "coucou"));
+	printf("\nprintf %i\n", printf("%x %X %p %llu %c %s %%", test, test, &test, longu, 'a', "coucou"));
 }

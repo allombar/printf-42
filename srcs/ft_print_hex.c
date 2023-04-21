@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alelomba <alelomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 17:19:58 by alelomba          #+#    #+#             */
-/*   Updated: 2023/04/21 11:43:37 by alelomba         ###   ########.fr       */
+/*   Created: 2023/04/21 18:15:46 by alelomba          #+#    #+#             */
+/*   Updated: 2023/04/21 19:56:56 by alelomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_print_str(char *str)
+int	ft_print_hex(unsigned int nbr, int type)
 {
-	if (!str)
-		str = "(null)";
-	return (ft_putstr_count(str));
+	int count;
+
+	count = 0;
+	ft_puthex(nbr, &count, type);
+	return (count);
 }
